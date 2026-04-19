@@ -87,8 +87,8 @@ export const TabBar = React.memo(({ activeTab, onTabPress, inboxBadgeCount = 0 }
 
     const tabs: { key: TabType; icon: any; label: string }[] = React.useMemo(() => {
         // NOTE: Zen tab removed - the feature never got to a useful state
+        // NOTE: Inbox tab hidden for Jappy - not needed (file kept for upstream merge)
         return [
-            { key: 'inbox', icon: require('@/assets/images/brutalist/Brutalism-27.png'), label: t('tabs.inbox') },
             { key: 'sessions', icon: require('@/assets/images/brutalist/Brutalism-15.png'), label: t('tabs.sessions') },
             { key: 'settings', icon: require('@/assets/images/brutalist/Brutalism-9.png'), label: t('tabs.settings') },
         ];
