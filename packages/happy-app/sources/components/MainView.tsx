@@ -108,20 +108,47 @@ const TAB_TITLES = {
 // Active tabs
 type ActiveTabType = 'sessions' | 'inbox' | 'settings';
 
+function useServerPing(enabled: boolean): number | null {
+    const [latency, setLatency] = React.useState<number | null>(null);
+    React.useEffect(() => {
+        if (!enabled) return;
+        let cancelled = false;
+        const ping = async () => {
+            try {
+                const { getServerUrl } = await import('@/sync/serverConfig');
+                const url = getServerUrl();
+                const start = Date.now();
+                await fetch(`${url}/health`, { method: 'GET', signal: AbortSignal.timeout(3000) });
+                if (!cancelled) setLatency(Date.now() - start);
+            } catch {
+                if (!cancelled) setLatency(null);
+            }
+        };
+        ping();
+        const interval = setInterval(ping, 10000);
+        return () => { cancelled = true; clearInterval(interval); };
+    }, [enabled]);
+    return latency;
+}
+
 // Header title component with connection status
 const HeaderTitle = React.memo(({ activeTab }: { activeTab: ActiveTabType }) => {
     const { theme } = useUnistyles();
     const socketStatus = useSocketStatus();
+    const isConnected = socketStatus.status === 'connected';
+    const pingLatency = useServerPing(isConnected);
 
     const connectionStatus = React.useMemo(() => {
         const { status } = socketStatus;
         switch (status) {
-            case 'connected':
+            case 'connected': {
+                const latencyText = pingLatency !== null ? ` ${pingLatency}ms` : '';
                 return {
                     color: theme.colors.status.connected,
                     isPulsing: false,
-                    text: t('status.connected'),
+                    text: t('status.connected') + latencyText,
                 };
+            }
             case 'connecting':
                 return {
                     color: theme.colors.status.connecting,
@@ -147,7 +174,7 @@ const HeaderTitle = React.memo(({ activeTab }: { activeTab: ActiveTabType }) => 
                     text: '',
                 };
         }
-    }, [socketStatus, theme]);
+    }, [socketStatus, pingLatency, theme]);
 
     return (
         <View style={styles.titleContainer}>

@@ -1,6 +1,6 @@
 import { RoundButton } from "@/components/RoundButton";
 import { useAuth } from "@/auth/AuthContext";
-import { Text, View, Image, Platform } from "react-native";
+import { Text, View, Image, Platform, TextInput, Pressable } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import * as React from 'react';
 import { encodeBase64 } from "@/encryption/base64";
@@ -14,6 +14,7 @@ import { trackAccountCreated, trackAccountRestored } from '@/track';
 import { HomeHeaderNotAuth } from "@/components/HomeHeader";
 import { MainView } from "@/components/MainView";
 import { t } from '@/text';
+import { getServerUrl, setServerUrl } from '@/sync/serverConfig';
 
 export default function Home() {
     const auth = useAuth();
@@ -36,7 +37,33 @@ function NotAuthenticated() {
     const isLandscape = useIsLandscape();
     const insets = useSafeAreaInsets();
 
+    const [serverUrl, setServerUrlState] = React.useState(() => getServerUrl());
+    const [showServerInput, setShowServerInput] = React.useState(false);
+    const [serverError, setServerError] = React.useState('');
+
+    const handleServerUrlChange = (url: string) => {
+        setServerUrlState(url);
+        setServerError('');
+    };
+
+    const applyServerUrl = () => {
+        const trimmed = serverUrl.trim();
+        if (!trimmed) return;
+        try {
+            new URL(trimmed);
+            setServerUrl(trimmed);
+            setShowServerInput(false);
+            setServerError('');
+        } catch {
+            setServerError('Invalid URL format');
+        }
+    };
+
     const createAccount = async () => {
+        if (showServerInput) {
+            applyServerUrl();
+            return;
+        }
         try {
             const secret = await getRandomBytesAsync(32);
             const token = await authGetToken(secret);
@@ -62,6 +89,33 @@ function NotAuthenticated() {
             <Text style={styles.subtitle}>
                 {t('welcome.subtitle')}
             </Text>
+
+            {/* Server URL selector */}
+            <Pressable onPress={() => setShowServerInput(v => !v)} style={styles.serverRow}>
+                <Text style={[styles.serverLabel, { color: theme.colors.textSecondary }]}>
+                    Server: {serverUrl}
+                </Text>
+            </Pressable>
+            {showServerInput && (
+                <View style={styles.serverInputBox}>
+                    <TextInput
+                        value={serverUrl}
+                        onChangeText={handleServerUrlChange}
+                        placeholder="http://192.168.x.x:3005"
+                        placeholderTextColor={theme.colors.textSecondary}
+                        style={[styles.serverInput, { color: theme.colors.text, borderColor: serverError ? theme.colors.status.error : theme.colors.divider }]}
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        onSubmitEditing={applyServerUrl}
+                        returnKeyType="done"
+                    />
+                    {serverError ? <Text style={[styles.serverErrorText, { color: theme.colors.status.error }]}>{serverError}</Text> : null}
+                    <Pressable onPress={applyServerUrl} style={[styles.serverApplyBtn, { backgroundColor: theme.colors.button.primary.background }]}>
+                        <Text style={[styles.serverApplyBtnText, { color: theme.colors.button.primary.tint }]}>Apply</Text>
+                    </Pressable>
+                </View>
+            )}
+
             {Platform.OS !== 'android' && Platform.OS !== 'ios' ? (
                 <>
                     <View style={styles.buttonContainer}>
@@ -209,6 +263,43 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: 16,
     },
     buttonContainerSecondary: {
+    },
+    serverRow: {
+        marginBottom: 24,
+        paddingHorizontal: 8,
+        paddingVertical: 4,
+    },
+    serverLabel: {
+        fontSize: 13,
+        ...Typography.default(),
+        textDecorationLine: 'underline',
+    },
+    serverInputBox: {
+        width: '100%',
+        maxWidth: 320,
+        marginBottom: 24,
+        gap: 8,
+    },
+    serverInput: {
+        borderWidth: 1,
+        borderRadius: 10,
+        paddingHorizontal: 12,
+        paddingVertical: 10,
+        fontSize: 14,
+        ...Typography.default(),
+    },
+    serverErrorText: {
+        fontSize: 12,
+        ...Typography.default(),
+    },
+    serverApplyBtn: {
+        borderRadius: 10,
+        paddingVertical: 10,
+        alignItems: 'center',
+    },
+    serverApplyBtnText: {
+        fontSize: 14,
+        ...Typography.default('semiBold'),
     },
     // Landscape styles
     landscapeContainer: {
