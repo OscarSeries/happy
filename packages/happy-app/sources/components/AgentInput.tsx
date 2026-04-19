@@ -471,6 +471,28 @@ export const AgentInput = React.memo(React.forwardRef<MultiTextInputHandle, Agen
         sendBlockShakerRef.current?.shake();
     }, [hasText, isSendBlocked, props.isSending]);
 
+    // Listen for native Ctrl+Enter / Cmd+Enter event (hardware keyboard, Android + iOS)
+    React.useEffect(() => {
+        if (Platform.OS === 'web') return;
+        let sub: { remove: () => void } | null = null;
+        try {
+            const { addCtrlEnterListener } = require('../../modules/hardware-keyboard');
+            sub = addCtrlEnterListener(() => {
+                if (props.value.trim()) {
+                    if (isSendBlocked) {
+                        handleBlockedSendAttempt();
+                    } else if (!props.isSendDisabled && !props.isSending) {
+                        hapticsLight();
+                        props.onSend();
+                    }
+                }
+            });
+        } catch (_) {
+            // Module not available, skip
+        }
+        return () => sub?.remove();
+    }, [props.value, props.onSend, props.isSendDisabled, props.isSending, isSendBlocked, handleBlockedSendAttempt]);
+
     const handleSendPress = React.useCallback(() => {
         if (isSendBlocked) {
             handleBlockedSendAttempt();

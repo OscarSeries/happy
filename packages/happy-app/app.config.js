@@ -1,8 +1,8 @@
 const variant = process.env.APP_ENV || 'development';
 const name = {
-    development: "Happy (dev)",
-    preview: "Happy (preview)",
-    production: "Happy"
+    development: "Jappy (dev)",
+    preview: "Jappy (preview)",
+    production: "Jappy"
 }[variant];
 const bundleId = {
     development: "com.slopus.happy.dev",
@@ -26,6 +26,9 @@ export default {
     expo: {
         name,
         slug: "happy",
+        autolinking: {
+            nativeModulesDir: "./modules"
+        },
         version: "1.7.0",
         runtimeVersion: "21",
         orientation: "default",
@@ -41,7 +44,11 @@ export default {
             infoPlist: {
                 NSMicrophoneUsageDescription: "Allow $(PRODUCT_NAME) to access your microphone for voice conversations with AI.",
                 NSLocalNetworkUsageDescription: "Allow $(PRODUCT_NAME) to find and connect to local devices on your network.",
-                NSBonjourServices: ["_http._tcp", "_https._tcp"]
+                NSBonjourServices: ["_http._tcp", "_https._tcp"],
+                NSAppTransportSecurity: {
+                    NSAllowsArbitraryLoads: true,
+                    NSAllowsLocalNetworking: true
+                }
             },
             associatedDomains: variant === 'production' ? ["applinks:app.happy.engineering"] : []
         },
@@ -67,6 +74,7 @@ export default {
             ],
             package: bundleId,
             googleServicesFile: "./google-services.json",
+            usesCleartextTraffic: true,
             intentFilters: variant === 'production' ? [
                 {
                     "action": "VIEW",
