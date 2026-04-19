@@ -266,6 +266,7 @@ export async function claudeRemoteLauncher(session: Session): Promise<'switch' |
             message: string;
             mode: EnhancedMode;
         } | null = null;
+        let modelOverride: string | undefined = undefined;
 
         // Track session ID to detect when it actually changes
         // This prevents context loss when mode changes (permission mode, model, etc.)
@@ -312,6 +313,9 @@ export async function claudeRemoteLauncher(session: Session): Promise<'switch' |
                             let p = pending;
                             pending = null;
                             permissionHandler.handleModeChange(p.mode.permissionMode);
+                            if (modelOverride) {
+                                p = { ...p, mode: { ...p.mode, model: modelOverride } };
+                            }
                             return p;
                         }
 
@@ -327,9 +331,10 @@ export async function claudeRemoteLauncher(session: Session): Promise<'switch' |
                             modeHash = msg.hash;
                             mode = msg.mode;
                             permissionHandler.handleModeChange(mode.permissionMode);
+                            const effectiveMode = modelOverride ? { ...mode, model: modelOverride } : mode;
                             return {
                                 message: msg.message,
-                                mode: msg.mode
+                                mode: effectiveMode
                             }
                         }
 
@@ -348,6 +353,10 @@ export async function claudeRemoteLauncher(session: Session): Promise<'switch' |
                             tools: metadata.tools,
                             slashCommands: metadata.slashCommands,
                         }));
+                    },
+                    onModelChange: (model: string) => {
+                        logger.debug(`[remote]: model override set to ${model}`);
+                        modelOverride = model;
                     },
                     onQueryReady: (q) => {
                         permissionHandler.setPermissionModeUpdater(async (mode) => {

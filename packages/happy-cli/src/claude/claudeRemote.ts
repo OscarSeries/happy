@@ -41,7 +41,8 @@ export async function claudeRemote(opts: {
     onMessage: (message: SDKMessage) => void,
     onCompletionEvent?: (message: string) => void,
     onSessionReset?: () => void,
-    onSDKMetadata?: (metadata: { tools?: string[]; slashCommands?: string[] }) => void
+    onSDKMetadata?: (metadata: { tools?: string[]; slashCommands?: string[] }) => void,
+    onModelChange?: (model: string) => void
 }) {
 
     // Check if session is valid
@@ -100,6 +101,32 @@ export async function claudeRemote(opts: {
         if (opts.onSessionReset) {
             opts.onSessionReset();
         }
+        return;
+    }
+
+    // Handle /model command
+    if (specialCommand.type === 'model') {
+        const KNOWN_MODELS = [
+            { alias: 'opus',   full: 'claude-opus-4-7' },
+            { alias: 'sonnet', full: 'claude-sonnet-4-6' },
+            { alias: 'haiku',  full: 'claude-haiku-4-5-20251001' },
+        ];
+        if (!specialCommand.modelName) {
+            const current = initial.mode.model ?? '(default)';
+            const list = KNOWN_MODELS.map(m => `  ${m.alias} → ${m.full}`).join('\n');
+            if (opts.onCompletionEvent) {
+                opts.onCompletionEvent(`Current model: ${current}\nAvailable aliases:\n${list}`);
+            }
+        } else {
+            const resolved = KNOWN_MODELS.find(m => m.alias === specialCommand.modelName)?.full ?? specialCommand.modelName;
+            if (opts.onModelChange) {
+                opts.onModelChange(resolved);
+            }
+            if (opts.onCompletionEvent) {
+                opts.onCompletionEvent(`Model set to: ${resolved}\n(takes effect on next message)`);
+            }
+        }
+        opts.onReady();
         return;
     }
 

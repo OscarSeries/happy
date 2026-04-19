@@ -11,9 +11,15 @@ export interface ClearCommandResult {
     isClear: boolean;
 }
 
+export interface ModelCommandResult {
+    isModel: boolean;
+    modelName?: string;
+}
+
 export interface SpecialCommandResult {
-    type: 'compact' | 'clear' | null;
+    type: 'compact' | 'clear' | 'model' | null;
     originalMessage?: string;
+    modelName?: string;
 }
 
 /**
@@ -56,6 +62,22 @@ export function parseClear(message: string): ClearCommandResult {
 }
 
 /**
+ * Parse /model command
+ * Matches "/model" (show current) or "/model <name>" (set model)
+ */
+export function parseModel(message: string): ModelCommandResult {
+    const trimmed = message.trim();
+    if (trimmed === '/model') {
+        return { isModel: true };
+    }
+    if (trimmed.startsWith('/model ')) {
+        const modelName = trimmed.slice('/model '.length).trim();
+        return { isModel: true, modelName: modelName || undefined };
+    }
+    return { isModel: false };
+}
+
+/**
  * Unified parser for special commands
  * Returns the type of command and original message if applicable
  */
@@ -67,14 +89,22 @@ export function parseSpecialCommand(message: string): SpecialCommandResult {
             originalMessage: compactResult.originalMessage
         };
     }
-    
+
     const clearResult = parseClear(message);
     if (clearResult.isClear) {
         return {
             type: 'clear'
         };
     }
-    
+
+    const modelResult = parseModel(message);
+    if (modelResult.isModel) {
+        return {
+            type: 'model',
+            modelName: modelResult.modelName
+        };
+    }
+
     return {
         type: null
     };
