@@ -22,7 +22,7 @@ function plural({ count, one, few, many }: { count: number; one: string; few: st
 }
 
 /**
- * Russian translations for the Happy app
+ * Russian translations for the Jappy app
  * Must match the exact structure of the English translations
  */
 export const ru: TranslationStructure = {
@@ -108,7 +108,7 @@ export const ru: TranslationStructure = {
         developer: 'Разработчик',
         developerTools: 'Инструменты разработчика',
         about: 'О программе',
-        aboutFooter: 'Happy Coder — мобильное приложение для работы с Codex и Claude Code. Использует сквозное шифрование, все данные аккаунта хранятся только на вашем устройстве. Не связано с Anthropic.',
+        aboutFooter: 'Jappy Coder — мобильное приложение для работы с Codex и Claude Code. Использует сквозное шифрование, все данные аккаунта хранятся только на вашем устройстве. Не связано с Anthropic.',
         whatsNew: 'Что нового',
         whatsNewSubtitle: 'Посмотреть последние обновления и улучшения',
         reportIssue: 'Сообщить о проблеме',
@@ -212,7 +212,7 @@ export const ru: TranslationStructure = {
         voiceServiceUnavailable: 'Голосовой сервис временно недоступен',
         voiceLimitReachedTitle: 'Лимит голоса достигнут',
         voiceHardLimitReached: ({ hours }: { hours: number }) => `Вы использовали ${hours}+ часов голосового общения в этом месяце. Это максимально допустимый лимит. Вы можете настроить собственного агента ElevenLabs в настройках голоса, чтобы использовать свою квоту.`,
-        voiceConversationLimitReached: 'Вы достигли максимального количества голосовых разговоров в этом месяце. Возможно, в будущем мы добавим голосовое использование по запросу — пожалуйста, создайте заявку на github.com/nicepkg/happy/issues, если вы столкнулись с этим ограничением.',
+        voiceConversationLimitReached: 'Вы достигли максимального количества голосовых разговоров в этом месяце. Возможно, в будущем мы добавим голосовое использование по запросу — пожалуйста, создайте заявку на github.com/juitem/jappy/issues, если вы столкнулись с этим ограничением.',
         oauthInitializationFailed: 'Не удалось инициализировать процесс OAuth',
         tokenStorageFailed: 'Не удалось сохранить токены аутентификации',
         oauthStateMismatch: 'Ошибка проверки безопасности. Попробуйте снова',
@@ -265,7 +265,7 @@ export const ru: TranslationStructure = {
         // Used by Server Configuration screen (app/(app)/server.tsx)
         serverConfiguration: 'Настройка сервера',
         enterServerUrl: 'Пожалуйста, введите URL сервера',
-        notValidHappyServer: 'Это не валидный сервер Happy',
+        notValidHappyServer: 'Это не валидный сервер Jappy',
         changeServer: 'Изменить сервер',
         continueWithServer: 'Продолжить с этим сервером?',
         resetToDefault: 'Сбросить по умолчанию',
@@ -285,9 +285,9 @@ export const ru: TranslationStructure = {
         killSessionConfirm: 'Вы уверены, что хотите завершить эту сессию?',
         archiveSession: 'Архивировать сессию',
         archiveSessionConfirm: 'Вы уверены, что хотите архивировать эту сессию?',
-        happySessionIdCopied: 'ID сессии Happy скопирован в буфер обмена',
-        failedToCopySessionId: 'Не удалось скопировать ID сессии Happy',
-        happySessionId: 'ID сессии Happy',
+        happySessionIdCopied: 'ID сессии Jappy скопирован в буфер обмена',
+        failedToCopySessionId: 'Не удалось скопировать ID сессии Jappy',
+        happySessionId: 'ID сессии Jappy',
         claudeCodeSessionId: 'ID сессии Claude Code',
         claudeCodeSessionIdCopied: 'ID сессии Claude Code скопирован в буфер обмена',
         codexThreadId: 'ID треда Codex',
@@ -350,7 +350,7 @@ export const ru: TranslationStructure = {
         emptyMainScreen: {
             // Used by EmptyMainScreen component
             readyToCode: 'Готовы к программированию?',
-            installCli: 'Установите Happy CLI',
+            installCli: 'Установите Jappy CLI',
             runIt: 'Запустите его',
             scanQrCode: 'Отсканируйте QR-код',
             openCamera: 'Открыть камеру',
@@ -469,7 +469,7 @@ export const ru: TranslationStructure = {
     },
 
     sidebar: {
-        sessionsTitle: 'Happy',
+        sessionsTitle: 'Jappy',
         showArchived: 'Показать архив',
         hideArchived: 'Скрыть архив',
     },
@@ -590,7 +590,7 @@ export const ru: TranslationStructure = {
         customAgentIdDescription: 'Введите ваш ElevenLabs Agent ID. Оставьте пустым, чтобы использовать стандартный Happy.',
         customAgentIdPlaceholder: 'e.g. abc123def456',
         bypassToken: 'Прямое подключение',
-        bypassTokenSubtitle: 'Пропустить сервер Happy, подключиться напрямую к ElevenLabs',
+        bypassTokenSubtitle: 'Пропустить сервер Jappy, подключиться напрямую к ElevenLabs',
         promptGuideTitle: 'Руководство по промптам агента',
         promptGuideDescription: 'Вашему агенту ElevenLabs необходимы:\n\n• Инструмент: messageClaudeCode — параметр: message (string). Отправляет сообщение в активную сессию кодирования.\n• Инструмент: processPermissionRequest — параметр: decision ("allow" или "deny"). Одобряет или отклоняет ожидающее разрешение на использование инструмента.\n• Динамическая переменная: {{initialConversationContext}} — получает историю и контекст сессии при запуске.\n\nАгент выступает голосовым мостом между пользователем и агентами кодирования. Он должен быть кратким, отвечать только при обращении и сообщать, когда агент кодирования завершает работу.',
         usageTitle: 'Использование (последние 30 дней)',
@@ -667,7 +667,7 @@ export const ru: TranslationStructure = {
         invalidConnectionLink: 'Неверная ссылка подключения',
         invalidConnectionLinkDescription: 'Ссылка подключения отсутствует или неверна. Проверьте URL и попробуйте снова.',
         connectTerminal: 'Подключить терминал',
-        terminalRequestDescription: 'Терминал запрашивает подключение к вашему аккаунту Happy Coder. Это позволит терминалу безопасно отправлять и получать сообщения.',
+        terminalRequestDescription: 'Терминал запрашивает подключение к вашему аккаунту Jappy Coder. Это позволит терминалу безопасно отправлять и получать сообщения.',
         connectionDetails: 'Детали подключения',
         publicKey: 'Публичный ключ',
         encryption: 'Шифрование',

@@ -11,7 +11,7 @@ function plural({ count, singular, plural }: { count: number; singular: string; 
 }
 
 /**
- * Spanish translations for the Happy app
+ * Spanish translations for the Jappy app
  * Must match the exact structure of the English translations
  */
 export const es: TranslationStructure = {
@@ -119,7 +119,7 @@ export const es: TranslationStructure = {
         developer: 'Desarrollador',
         developerTools: 'Herramientas de desarrollador',
         about: 'Acerca de',
-        aboutFooter: 'Happy Coder es un cliente móvil para Codex y Claude Code. Todo está cifrado de extremo a extremo y tu cuenta se guarda solo en tu dispositivo. No está afiliado con Anthropic.',
+        aboutFooter: 'Jappy Coder es un cliente móvil para Codex y Claude Code. Todo está cifrado de extremo a extremo y tu cuenta se guarda solo en tu dispositivo. No está afiliado con Anthropic.',
         whatsNew: 'Novedades',
         whatsNewSubtitle: 'Ve las últimas actualizaciones y mejoras',
         reportIssue: 'Reportar un problema',
@@ -224,7 +224,7 @@ export const es: TranslationStructure = {
         voiceServiceUnavailable: 'El servicio de voz no está disponible temporalmente',
         voiceLimitReachedTitle: 'Límite de voz alcanzado',
         voiceHardLimitReached: ({ hours }: { hours: number }) => `Has usado ${hours}+ horas de voz este mes. Este es el máximo permitido. Puedes configurar tu propio agente ElevenLabs en la configuración de voz para usar tu propia cuota.`,
-        voiceConversationLimitReached: 'Has alcanzado el número máximo de conversaciones de voz este mes. Es posible que en el futuro agreguemos uso de voz bajo demanda — por favor crea un issue en github.com/nicepkg/happy/issues si alcanzas este límite.',
+        voiceConversationLimitReached: 'Has alcanzado el número máximo de conversaciones de voz este mes. Es posible que en el futuro agreguemos uso de voz bajo demanda — por favor crea un issue en github.com/juitem/jappy/issues si alcanzas este límite.',
         oauthInitializationFailed: 'Falló al inicializar el flujo OAuth',
         tokenStorageFailed: 'Falló al almacenar los tokens de autenticación',
         oauthStateMismatch: 'Falló la validación de seguridad. Inténtalo de nuevo',
@@ -287,7 +287,7 @@ export const es: TranslationStructure = {
         // Used by Server Configuration screen (app/(app)/server.tsx)
         serverConfiguration: 'Configuración del servidor',
         enterServerUrl: 'Ingresa una URL de servidor',
-        notValidHappyServer: 'No es un servidor Happy válido',
+        notValidHappyServer: 'No es un servidor Jappy válido',
         changeServer: 'Cambiar servidor',
         continueWithServer: '¿Continuar con este servidor?',
         resetToDefault: 'Restablecer por defecto',
@@ -373,7 +373,7 @@ export const es: TranslationStructure = {
         emptyMainScreen: {
             // Used by EmptyMainScreen component
             readyToCode: '¿Listo para programar?',
-            installCli: 'Instale el Happy CLI',
+            installCli: 'Instale el Jappy CLI',
             runIt: 'Ejecútelo',
             scanQrCode: 'Escanee el código QR',
             openCamera: 'Abrir cámara',
@@ -453,7 +453,7 @@ export const es: TranslationStructure = {
     },
 
     sidebar: {
-        sessionsTitle: 'Happy',
+        sessionsTitle: 'Jappy',
         showArchived: 'Mostrar archivadas',
         hideArchived: 'Ocultar archivadas',
     },
@@ -663,7 +663,7 @@ export const es: TranslationStructure = {
         invalidConnectionLink: 'Enlace de conexión inválido',
         invalidConnectionLinkDescription: 'El enlace de conexión falta o es inválido. Verifica la URL e intenta nuevamente.',
         connectTerminal: 'Conectar terminal',
-        terminalRequestDescription: 'Un terminal está solicitando conectarse a tu cuenta de Happy Coder. Esto permitirá al terminal enviar y recibir mensajes de forma segura.',
+        terminalRequestDescription: 'Un terminal está solicitando conectarse a tu cuenta de Jappy Coder. Esto permitirá al terminal enviar y recibir mensajes de forma segura.',
         connectionDetails: 'Detalles de conexión',
         publicKey: 'Clave pública',
         encryption: 'Cifrado',

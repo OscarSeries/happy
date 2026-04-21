@@ -11,7 +11,7 @@ function plural({ count, singular, plural }: { count: number; singular: string; 
 }
 
 /**
- * Catalan translations for the Happy app
+ * Catalan translations for the Jappy app
  * Must match the exact structure of the English translations
  */
 export const ca: TranslationStructure = {
@@ -119,7 +119,7 @@ export const ca: TranslationStructure = {
         developer: 'Desenvolupador',
         developerTools: 'Eines de desenvolupador',
         about: 'Quant a',
-        aboutFooter: 'Happy Coder és un client mòbil de Codex i Claude Code. Tot està xifrat punt a punt i el teu compte es guarda només al teu dispositiu. No està afiliat amb Anthropic.',
+        aboutFooter: 'Jappy Coder és un client mòbil de Codex i Claude Code. Tot està xifrat punt a punt i el teu compte es guarda només al teu dispositiu. No està afiliat amb Anthropic.',
         whatsNew: 'Novetats',
         whatsNewSubtitle: 'Mira les últimes actualitzacions i millores',
         reportIssue: 'Informa d\'un problema',
@@ -224,7 +224,7 @@ export const ca: TranslationStructure = {
         voiceServiceUnavailable: 'El servei de veu no està disponible temporalment',
         voiceLimitReachedTitle: 'Límit de veu assolit',
         voiceHardLimitReached: ({ hours }: { hours: number }) => `Has utilitzat ${hours}+ hores de veu aquest mes. Aquest és el màxim permès. Pots configurar el teu propi agent ElevenLabs a la configuració de veu per utilitzar la teva pròpia quota.`,
-        voiceConversationLimitReached: 'Has assolit el nombre màxim de converses de veu aquest mes. És possible que en el futur afegim ús de veu sota demanda — si us plau, crea un issue a github.com/nicepkg/happy/issues si arribes a aquest límit.',
+        voiceConversationLimitReached: 'Has assolit el nombre màxim de converses de veu aquest mes. És possible que en el futur afegim ús de veu sota demanda — si us plau, crea un issue a github.com/juitem/jappy/issues si arribes a aquest límit.',
         oauthInitializationFailed: 'Ha fallat la inicialització del flux OAuth',
         tokenStorageFailed: 'Ha fallat l\'emmagatzematge dels tokens d\'autenticació',
         oauthStateMismatch: 'Ha fallat la validació de seguretat. Si us plau, torna-ho a provar',
@@ -287,7 +287,7 @@ export const ca: TranslationStructure = {
         // Used by Server Configuration screen (app/(app)/server.tsx)
         serverConfiguration: 'Configuració del servidor',
         enterServerUrl: 'Introdueix una URL del servidor',
-        notValidHappyServer: 'No és un servidor Happy vàlid',
+        notValidHappyServer: 'No és un servidor Jappy vàlid',
         changeServer: 'Canvia el servidor',
         continueWithServer: 'Continuar amb aquest servidor?',
         resetToDefault: 'Reinicia per defecte',
@@ -373,7 +373,7 @@ export const ca: TranslationStructure = {
         emptyMainScreen: {
             // Used by EmptyMainScreen component
             readyToCode: 'Llest per programar?',
-            installCli: 'Instal·la el Happy CLI',
+            installCli: 'Instal·la el Jappy CLI',
             runIt: 'Executa\'l',
             scanQrCode: 'Escaneja el codi QR',
             openCamera: 'Obre la càmera',
@@ -453,7 +453,7 @@ export const ca: TranslationStructure = {
     },
 
     sidebar: {
-        sessionsTitle: 'Happy',
+        sessionsTitle: 'Jappy',
         showArchived: 'Mostra arxivades',
         hideArchived: 'Amaga arxivades',
     },
@@ -663,7 +663,7 @@ export const ca: TranslationStructure = {
         invalidConnectionLink: 'Enllaç de connexió no vàlid',
         invalidConnectionLinkDescription: 'L\'enllaç de connexió falta o no és vàlid. Comprova l\'URL i torna-ho a provar.',
         connectTerminal: 'Connecta el terminal',
-        terminalRequestDescription: 'Un terminal està sol·licitant connectar-se al teu compte de Happy Coder. Això permetrà al terminal enviar i rebre missatges de forma segura.',
+        terminalRequestDescription: 'Un terminal està sol·licitant connectar-se al teu compte de Jappy Coder. Això permetrà al terminal enviar i rebre missatges de forma segura.',
         connectionDetails: 'Detalls de la connexió',
         publicKey: 'Clau pública',
         encryption: 'Xifratge',

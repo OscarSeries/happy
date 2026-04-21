@@ -11,7 +11,7 @@ function plural({ count, singular, plural }: { count: number; singular: string; 
 }
 
 /**
- * Portuguese (Brazilian) translations for the Happy app
+ * Portuguese (Brazilian) translations for the Jappy app
  * Must match the exact structure of the English translations
  */
 export const pt: TranslationStructure = {
@@ -119,7 +119,7 @@ export const pt: TranslationStructure = {
         developer: 'Desenvolvedor',
         developerTools: 'Ferramentas de desenvolvedor',
         about: 'Sobre',
-        aboutFooter: 'Happy Coder é um cliente móvel para Codex e Claude Code. É totalmente criptografado ponta a ponta e sua conta é armazenada apenas no seu dispositivo. Não é afiliado à Anthropic.',
+        aboutFooter: 'Jappy Coder é um cliente móvel para Codex e Claude Code. É totalmente criptografado ponta a ponta e sua conta é armazenada apenas no seu dispositivo. Não é afiliado à Anthropic.',
         whatsNew: 'Novidades',
         whatsNewSubtitle: 'Veja as atualizações e melhorias mais recentes',
         reportIssue: 'Relatar um problema',
@@ -223,7 +223,7 @@ export const pt: TranslationStructure = {
         voiceServiceUnavailable: 'Serviço de voz temporariamente indisponível',
         voiceLimitReachedTitle: 'Limite de voz atingido',
         voiceHardLimitReached: ({ hours }: { hours: number }) => `Você usou ${hours}+ horas de voz este mês. Este é o máximo permitido. Você pode configurar seu próprio agente ElevenLabs nas configurações de voz para usar sua própria cota.`,
-        voiceConversationLimitReached: 'Você atingiu o número máximo de conversas de voz este mês. Podemos adicionar uso de voz sob demanda no futuro — por favor, abra um issue em github.com/nicepkg/happy/issues se você atingir este limite.',
+        voiceConversationLimitReached: 'Você atingiu o número máximo de conversas de voz este mês. Podemos adicionar uso de voz sob demanda no futuro — por favor, abra um issue em github.com/juitem/jappy/issues se você atingir este limite.',
         oauthInitializationFailed: 'Falha ao inicializar o fluxo OAuth',
         tokenStorageFailed: 'Falha ao armazenar tokens de autenticação',
         oauthStateMismatch: 'Falha na validação de segurança. Por favor, tente novamente',
@@ -286,7 +286,7 @@ export const pt: TranslationStructure = {
         // Used by Server Configuration screen (app/(app)/server.tsx)
         serverConfiguration: 'Configuração do servidor',
         enterServerUrl: 'Por favor, insira uma URL do servidor',
-        notValidHappyServer: 'Não é um servidor Happy válido',
+        notValidHappyServer: 'Não é um servidor Jappy válido',
         changeServer: 'Alterar servidor',
         continueWithServer: 'Continuar com este servidor?',
         resetToDefault: 'Redefinir para padrão',
@@ -306,9 +306,9 @@ export const pt: TranslationStructure = {
         killSessionConfirm: 'Tem certeza de que deseja encerrar esta sessão?',
         archiveSession: 'Arquivar sessão',
         archiveSessionConfirm: 'Tem certeza de que deseja arquivar esta sessão?',
-        happySessionIdCopied: 'ID da sessão Happy copiado para a área de transferência',
-        failedToCopySessionId: 'Falha ao copiar ID da sessão Happy',
-        happySessionId: 'ID da sessão Happy',
+        happySessionIdCopied: 'ID da sessão Jappy copiado para a área de transferência',
+        failedToCopySessionId: 'Falha ao copiar ID da sessão Jappy',
+        happySessionId: 'ID da sessão Jappy',
         claudeCodeSessionId: 'ID da sessão Claude Code',
         claudeCodeSessionIdCopied: 'ID da sessão Claude Code copiado para a área de transferência',
         codexThreadId: 'ID da thread do Codex',
@@ -372,7 +372,7 @@ export const pt: TranslationStructure = {
         emptyMainScreen: {
             // Used by EmptyMainScreen component
             readyToCode: 'Pronto para programar?',
-            installCli: 'Instale o Happy CLI',
+            installCli: 'Instale o Jappy CLI',
             runIt: 'Execute',
             scanQrCode: 'Escaneie o código QR',
             openCamera: 'Abrir câmera',
@@ -452,7 +452,7 @@ export const pt: TranslationStructure = {
     },
 
     sidebar: {
-        sessionsTitle: 'Happy',
+        sessionsTitle: 'Jappy',
         showArchived: 'Mostrar arquivadas',
         hideArchived: 'Ocultar arquivadas',
     },
@@ -662,7 +662,7 @@ export const pt: TranslationStructure = {
         invalidConnectionLink: 'Link de conexão inválido',
         invalidConnectionLinkDescription: 'O link de conexão está ausente ou inválido. Verifique a URL e tente novamente.',
         connectTerminal: 'Conectar terminal',
-        terminalRequestDescription: 'Um terminal está solicitando conexão à sua conta Happy Coder. Isso permitirá que o terminal envie e receba mensagens com segurança.',
+        terminalRequestDescription: 'Um terminal está solicitando conexão à sua conta Jappy Coder. Isso permitirá que o terminal envie e receba mensagens com segurança.',
         connectionDetails: 'Detalhes da conexão',
         publicKey: 'Chave pública',
         encryption: 'Criptografia',

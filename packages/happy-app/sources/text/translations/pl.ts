@@ -22,7 +22,7 @@ function plural({ count, one, few, many }: { count: number; one: string; few: st
 }
 
 /**
- * Polish translations for the Happy app
+ * Polish translations for the Jappy app
  * Must match the exact structure of the English translations
  */
 export const pl: TranslationStructure = {
@@ -136,7 +136,7 @@ export const pl: TranslationStructure = {
         developer: 'Deweloper',
         developerTools: 'Narzędzia deweloperskie',
         about: 'O aplikacji',
-        aboutFooter: 'Happy Coder to mobilny klient Codex i Claude Code. Jest w pełni szyfrowany end-to-end, a Twoje konto jest przechowywane tylko na Twoim urządzeniu. Nie jest powiązany z Anthropic.',
+        aboutFooter: 'Jappy Coder to mobilny klient Codex i Claude Code. Jest w pełni szyfrowany end-to-end, a Twoje konto jest przechowywane tylko na Twoim urządzeniu. Nie jest powiązany z Anthropic.',
         whatsNew: 'Co nowego',
         whatsNewSubtitle: 'Zobacz najnowsze aktualizacje i ulepszenia',
         reportIssue: 'Zgłoś problem',
@@ -241,7 +241,7 @@ export const pl: TranslationStructure = {
         voiceServiceUnavailable: 'Usługa głosowa jest tymczasowo niedostępna',
         voiceLimitReachedTitle: 'Osiągnięto limit głosu',
         voiceHardLimitReached: ({ hours }: { hours: number }) => `Wykorzystałeś ${hours}+ godzin głosu w tym miesiącu. To jest maksymalny dozwolony limit. Możesz skonfigurować własnego agenta ElevenLabs w ustawieniach głosu, aby korzystać z własnego limitu.`,
-        voiceConversationLimitReached: 'Osiągnąłeś maksymalną liczbę rozmów głosowych w tym miesiącu. Możliwe, że w przyszłości dodamy głosowe korzystanie na żądanie — prosimy o zgłoszenie na github.com/nicepkg/happy/issues, jeśli napotkasz ten limit.',
+        voiceConversationLimitReached: 'Osiągnąłeś maksymalną liczbę rozmów głosowych w tym miesiącu. Możliwe, że w przyszłości dodamy głosowe korzystanie na żądanie — prosimy o zgłoszenie na github.com/juitem/jappy/issues, jeśli napotkasz ten limit.',
         oauthInitializationFailed: 'Nie udało się zainicjować przepływu OAuth',
         tokenStorageFailed: 'Nie udało się zapisać tokenów uwierzytelniania',
         oauthStateMismatch: 'Weryfikacja bezpieczeństwa nie powiodła się. Spróbuj ponownie',
@@ -304,7 +304,7 @@ export const pl: TranslationStructure = {
         // Used by Server Configuration screen (app/(app)/server.tsx)
         serverConfiguration: 'Konfiguracja serwera',
         enterServerUrl: 'Proszę wprowadzić URL serwera',
-        notValidHappyServer: 'To nie jest prawidłowy serwer Happy',
+        notValidHappyServer: 'To nie jest prawidłowy serwer Jappy',
         changeServer: 'Zmień serwer',
         continueWithServer: 'Kontynuować z tym serwerem?',
         resetToDefault: 'Resetuj do domyślnego',
@@ -324,9 +324,9 @@ export const pl: TranslationStructure = {
         killSessionConfirm: 'Czy na pewno chcesz zakończyć tę sesję?',
         archiveSession: 'Zarchiwizuj sesję',
         archiveSessionConfirm: 'Czy na pewno chcesz zarchiwizować tę sesję?',
-        happySessionIdCopied: 'ID sesji Happy skopiowane do schowka',
-        failedToCopySessionId: 'Nie udało się skopiować ID sesji Happy',
-        happySessionId: 'ID sesji Happy',
+        happySessionIdCopied: 'ID sesji Jappy skopiowane do schowka',
+        failedToCopySessionId: 'Nie udało się skopiować ID sesji Jappy',
+        happySessionId: 'ID sesji Jappy',
         claudeCodeSessionId: 'ID sesji Claude Code',
         claudeCodeSessionIdCopied: 'ID sesji Claude Code skopiowane do schowka',
         codexThreadId: 'ID wątku Codex',
@@ -389,7 +389,7 @@ export const pl: TranslationStructure = {
         emptyMainScreen: {
             // Used by EmptyMainScreen component
             readyToCode: 'Gotowy do kodowania?',
-            installCli: 'Zainstaluj Happy CLI',
+            installCli: 'Zainstaluj Jappy CLI',
             runIt: 'Uruchom je',
             scanQrCode: 'Zeskanuj kod QR',
             openCamera: 'Otwórz kamerę',
@@ -469,7 +469,7 @@ export const pl: TranslationStructure = {
     },
 
     sidebar: {
-        sessionsTitle: 'Happy',
+        sessionsTitle: 'Jappy',
         showArchived: 'Pokaż zarchiwizowane',
         hideArchived: 'Ukryj zarchiwizowane',
     },
@@ -590,7 +590,7 @@ export const pl: TranslationStructure = {
         customAgentIdDescription: 'Wprowadź swój ElevenLabs Agent ID. Pozostaw puste, aby użyć domyślnego Happy.',
         customAgentIdPlaceholder: 'e.g. abc123def456',
         bypassToken: 'Połączenie bezpośrednie',
-        bypassTokenSubtitle: 'Pomiń serwer Happy, połącz się bezpośrednio z ElevenLabs',
+        bypassTokenSubtitle: 'Pomiń serwer Jappy, połącz się bezpośrednio z ElevenLabs',
         promptGuideTitle: 'Przewodnik po promptach agenta',
         promptGuideDescription: 'Twój agent ElevenLabs potrzebuje:\n\n• Narzędzie: messageClaudeCode — parametr: message (string). Wysyła wiadomość do aktywnej sesji kodowania.\n• Narzędzie: processPermissionRequest — parametr: decision ("allow" lub "deny"). Zatwierdza lub odrzuca oczekujące uprawnienie narzędzia.\n• Zmienna dynamiczna: {{initialConversationContext}} — otrzymuje historię sesji i kontekst przy uruchomieniu.\n\nAgent działa jako most głosowy między użytkownikiem a agentami kodującymi. Powinien być zwięzły, odpowiadać tylko gdy jest adresowany i raportować, gdy agent kodujący zakończy pracę.',
         usageTitle: 'Użycie (ostatnie 30 dni)',
@@ -679,7 +679,7 @@ export const pl: TranslationStructure = {
         invalidConnectionLink: 'Nieprawidłowy link połączenia',
         invalidConnectionLinkDescription: 'Link połączenia jest nieprawidłowy lub go brakuje. Sprawdź URL i spróbuj ponownie.',
         connectTerminal: 'Połącz terminal',
-        terminalRequestDescription: 'Terminal żąda połączenia z Twoim kontem Happy Coder. Pozwoli to terminalowi bezpiecznie wysyłać i odbierać wiadomości.',
+        terminalRequestDescription: 'Terminal żąda połączenia z Twoim kontem Jappy Coder. Pozwoli to terminalowi bezpiecznie wysyłać i odbierać wiadomości.',
         connectionDetails: 'Szczegóły połączenia',
         publicKey: 'Klucz publiczny',
         encryption: 'Szyfrowanie',

@@ -1,5 +1,5 @@
 /**
- * Japanese translations for the Happy app
+ * Japanese translations for the Jappy app
  * Values can be:
  * - String constants for static text
  * - Functions with typed object parameters for dynamic text
@@ -121,7 +121,7 @@ export const ja: TranslationStructure = {
         developer: '開発者',
         developerTools: '開発者ツール',
         about: 'このアプリについて',
-        aboutFooter: 'Happy CoderはCodexとClaude Codeのモバイルクライアントです。完全なエンドツーエンド暗号化を採用し、アカウントはデバイスにのみ保存されます。Anthropicとは提携していません。',
+        aboutFooter: 'Jappy CoderはCodexとClaude Codeのモバイルクライアントです。完全なエンドツーエンド暗号化を採用し、アカウントはデバイスにのみ保存されます。Anthropicとは提携していません。',
         whatsNew: '新機能',
         whatsNewSubtitle: '最新のアップデートと改善を確認',
         reportIssue: '問題を報告',
@@ -225,7 +225,7 @@ export const ja: TranslationStructure = {
         voiceServiceUnavailable: '音声サービスは一時的に利用できません',
         voiceLimitReachedTitle: '音声の上限に達しました',
         voiceHardLimitReached: ({ hours }: { hours: number }) => `今月${hours}時間以上の音声を使用しました。これは許可される最大量です。音声設定で独自の ElevenLabs エージェントを設定して、自分のクォータを使用できます。`,
-        voiceConversationLimitReached: '今月の音声会話の最大数に達しました。将来的にオンデマンドの音声利用を追加する可能性があります。この制限に達した場合は、github.com/nicepkg/happy/issues で issue を作成してください。',
+        voiceConversationLimitReached: '今月の音声会話の最大数に達しました。将来的にオンデマンドの音声利用を追加する可能性があります。この制限に達した場合は、github.com/juitem/jappy/issues で issue を作成してください。',
         oauthInitializationFailed: 'OAuth フローの初期化に失敗しました',
         tokenStorageFailed: '認証トークンの保存に失敗しました',
         oauthStateMismatch: 'セキュリティ検証に失敗しました。再試行してください',
@@ -288,7 +288,7 @@ export const ja: TranslationStructure = {
         // Used by Server Configuration screen (app/(app)/server.tsx)
         serverConfiguration: 'サーバー設定',
         enterServerUrl: 'サーバーURLを入力してください',
-        notValidHappyServer: '有効なHappy Serverではありません',
+        notValidHappyServer: '有効なJappy Serverではありません',
         changeServer: 'サーバーを変更',
         continueWithServer: 'このサーバーで続行しますか？',
         resetToDefault: 'デフォルトにリセット',
@@ -308,9 +308,9 @@ export const ja: TranslationStructure = {
         killSessionConfirm: 'このセッションを終了してもよろしいですか？',
         archiveSession: 'セッションをアーカイブ',
         archiveSessionConfirm: 'このセッションをアーカイブしてもよろしいですか？',
-        happySessionIdCopied: 'Happy Session IDがクリップボードにコピーされました',
-        failedToCopySessionId: 'Happy Session IDのコピーに失敗しました',
-        happySessionId: 'Happy Session ID',
+        happySessionIdCopied: 'Jappy Session IDがクリップボードにコピーされました',
+        failedToCopySessionId: 'Jappy Session IDのコピーに失敗しました',
+        happySessionId: 'Jappy Session ID',
         claudeCodeSessionId: 'Claude Code Session ID',
         claudeCodeSessionIdCopied: 'Claude Code Session IDがクリップボードにコピーされました',
         codexThreadId: 'Codex Thread ID',
@@ -344,7 +344,7 @@ export const ja: TranslationStructure = {
         path: 'パス',
         operatingSystem: 'オペレーティングシステム',
         processId: 'プロセスID',
-        happyHome: 'Happy Home',
+        happyHome: 'Jappy Home',
         copyMetadata: 'メタデータをコピー',
         agentState: 'エージェント状態',
         controlledByUser: 'ユーザーによる制御',
@@ -374,7 +374,7 @@ export const ja: TranslationStructure = {
         emptyMainScreen: {
             // Used by EmptyMainScreen component
             readyToCode: 'コーディングを始めますか？',
-            installCli: 'Happy CLIをインストール',
+            installCli: 'Jappy CLIをインストール',
             runIt: '実行する',
             scanQrCode: 'QRコードをスキャン',
             openCamera: 'カメラを開く',
@@ -454,7 +454,7 @@ export const ja: TranslationStructure = {
     },
 
     sidebar: {
-        sessionsTitle: 'Happy',
+        sessionsTitle: 'Jappy',
         showArchived: 'アーカイブを表示',
         hideArchived: 'アーカイブを非表示',
     },
@@ -575,7 +575,7 @@ export const ja: TranslationStructure = {
         customAgentIdDescription: 'ElevenLabs Agent ID を入力してください。空のままにすると Happy のデフォルトが使用されます。',
         customAgentIdPlaceholder: 'e.g. abc123def456',
         bypassToken: '直接接続',
-        bypassTokenSubtitle: 'Happy サーバーをスキップし、ElevenLabs に直接接続',
+        bypassTokenSubtitle: 'Jappy サーバーをスキップし、ElevenLabs に直接接続',
         promptGuideTitle: 'エージェントプロンプトガイド',
         promptGuideDescription: 'ElevenLabs エージェントには以下が必要です:\n\n• ツール: messageClaudeCode — パラメータ: message (string)。アクティブなコーディングセッションにメッセージを送信します。\n• ツール: processPermissionRequest — パラメータ: decision ("allow" または "deny")。保留中のツール許可を承認または拒否します。\n• 動的変数: {{initialConversationContext}} — 開始時にセッション履歴とコンテキストを受信します。\n\nエージェントはユーザーとコーディングエージェント間の音声ブリッジとして機能します。簡潔に、話しかけられた時のみ応答し、コーディングエージェントが作業を完了したら報告する必要があります。',
         usageTitle: '使用状況（過去30日間）',
@@ -664,7 +664,7 @@ export const ja: TranslationStructure = {
         invalidConnectionLink: '無効な接続リンク',
         invalidConnectionLinkDescription: '接続リンクが見つからないか無効です。URLを確認して再試行してください。',
         connectTerminal: 'ターミナルを接続',
-        terminalRequestDescription: 'ターミナルがHappy Coderアカウントへの接続を要求しています。これにより、ターミナルは安全にメッセージを送受信できるようになります。',
+        terminalRequestDescription: 'ターミナルがJappy Coderアカウントへの接続を要求しています。これにより、ターミナルは安全にメッセージを送受信できるようになります。',
         connectionDetails: '接続の詳細',
         publicKey: '公開鍵',
         encryption: '暗号化',

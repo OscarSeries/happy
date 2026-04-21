@@ -1,5 +1,5 @@
 /**
- * Chinese (Simplified) translations for the Happy app
+ * Chinese (Simplified) translations for the Jappy app
  * Values can be:
  * - String constants for static text
  * - Functions with typed object parameters for dynamic text
@@ -121,7 +121,7 @@ export const zhHans: TranslationStructure = {
         developer: '开发者',
         developerTools: '开发者工具',
         about: '关于',
-        aboutFooter: 'Happy Coder 是一个 Codex 和 Claude Code 移动客户端。它采用端到端加密，您的账户仅存储在本地设备上。与 Anthropic 无关联。',
+        aboutFooter: 'Jappy Coder 是一个 Codex 和 Claude Code 移动客户端。它采用端到端加密，您的账户仅存储在本地设备上。与 Anthropic 无关联。',
         whatsNew: '更新日志',
         whatsNewSubtitle: '查看最新更新和改进',
         reportIssue: '报告问题',
@@ -225,7 +225,7 @@ export const zhHans: TranslationStructure = {
         voiceServiceUnavailable: '语音服务暂时不可用',
         voiceLimitReachedTitle: '已达语音上限',
         voiceHardLimitReached: ({ hours }: { hours: number }) => `您本月已使用超过 ${hours} 小时的语音。这是允许的最大用量。您可以在语音设置中配置自己的 ElevenLabs 代理，以使用您自己的配额。`,
-        voiceConversationLimitReached: '您本月已达到语音对话的最大次数。我们未来可能会添加按需语音使用功能——如果您遇到此限制，请在 github.com/nicepkg/happy/issues 提交 issue。',
+        voiceConversationLimitReached: '您本月已达到语音对话的最大次数。我们未来可能会添加按需语音使用功能——如果您遇到此限制，请在 github.com/juitem/jappy/issues 提交 issue。',
         oauthInitializationFailed: '初始化 OAuth 流程失败',
         tokenStorageFailed: '存储认证令牌失败',
         oauthStateMismatch: '安全验证失败。请重试',
@@ -288,7 +288,7 @@ export const zhHans: TranslationStructure = {
         // Used by Server Configuration screen (app/(app)/server.tsx)
         serverConfiguration: '服务器配置',
         enterServerUrl: '请输入服务器 URL',
-        notValidHappyServer: '不是有效的 Happy 服务器',
+        notValidHappyServer: '不是有效的 Jappy 服务器',
         changeServer: '更改服务器',
         continueWithServer: '继续使用此服务器？',
         resetToDefault: '重置为默认',
@@ -308,9 +308,9 @@ export const zhHans: TranslationStructure = {
         killSessionConfirm: '您确定要终止此会话吗？',
         archiveSession: '归档会话',
         archiveSessionConfirm: '您确定要归档此会话吗？',
-        happySessionIdCopied: 'Happy 会话 ID 已复制到剪贴板',
-        failedToCopySessionId: '复制 Happy 会话 ID 失败',
-        happySessionId: 'Happy 会话 ID',
+        happySessionIdCopied: 'Jappy 会话 ID 已复制到剪贴板',
+        failedToCopySessionId: '复制 Jappy 会话 ID 失败',
+        happySessionId: 'Jappy 会话 ID',
         claudeCodeSessionId: 'Claude Code 会话 ID',
         claudeCodeSessionIdCopied: 'Claude Code 会话 ID 已复制到剪贴板',
         codexThreadId: 'Codex 线程 ID',
@@ -374,7 +374,7 @@ export const zhHans: TranslationStructure = {
         emptyMainScreen: {
             // Used by EmptyMainScreen component
             readyToCode: '准备开始编程？',
-            installCli: '安装 Happy CLI',
+            installCli: '安装 Jappy CLI',
             runIt: '运行它',
             scanQrCode: '扫描二维码',
             openCamera: '打开相机',
@@ -454,7 +454,7 @@ export const zhHans: TranslationStructure = {
     },
 
     sidebar: {
-        sessionsTitle: 'Happy',
+        sessionsTitle: 'Jappy',
         showArchived: '显示已归档',
         hideArchived: '隐藏已归档',
     },
@@ -575,7 +575,7 @@ export const zhHans: TranslationStructure = {
         customAgentIdDescription: '输入您的 ElevenLabs Agent ID。留空则使用 Happy 默认代理。',
         customAgentIdPlaceholder: 'e.g. abc123def456',
         bypassToken: '直接连接',
-        bypassTokenSubtitle: '跳过 Happy 服务器，直接连接到 ElevenLabs',
+        bypassTokenSubtitle: '跳过 Jappy 服务器，直接连接到 ElevenLabs',
         promptGuideTitle: '代理提示词指南',
         promptGuideDescription: '您的 ElevenLabs 代理需要：\n\n• 工具：messageClaudeCode — 参数：message (string)。向活跃的编码会话发送消息。\n• 工具：processPermissionRequest — 参数：decision ("allow" 或 "deny")。批准或拒绝待处理的工具权限。\n• 动态变量：{{initialConversationContext}} — 启动时接收会话历史和上下文。\n\n代理充当用户和编码代理之间的语音桥梁。它应该简洁，仅在被呼叫时回应，并在编码代理完成工作时进行报告。',
         usageTitle: '使用量（过去 30 天）',
@@ -664,7 +664,7 @@ export const zhHans: TranslationStructure = {
         invalidConnectionLink: '无效的连接链接',
         invalidConnectionLinkDescription: '连接链接缺失或无效。请检查 URL 并重试。',
         connectTerminal: '连接终端',
-        terminalRequestDescription: '有终端正在请求连接到您的 Happy Coder 账户。这将允许终端安全地发送和接收消息。',
+        terminalRequestDescription: '有终端正在请求连接到您的 Jappy Coder 账户。这将允许终端安全地发送和接收消息。',
         connectionDetails: '连接详情',
         publicKey: '公钥',
         encryption: '加密',

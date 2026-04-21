@@ -11,7 +11,7 @@ function plural({ count, singular, plural }: { count: number; singular: string; 
 }
 
 /**
- * Italian translations for the Happy app
+ * Italian translations for the Jappy app
  * Must match the exact structure of the English translations
  */
 export const it: TranslationStructure = {
@@ -118,7 +118,7 @@ export const it: TranslationStructure = {
         developer: 'Sviluppatore',
         developerTools: 'Strumenti sviluppatore',
         about: 'Informazioni',
-        aboutFooter: 'Happy Coder è un client mobile per Codex e Claude Code. È completamente cifrato end-to-end e il tuo account è memorizzato solo sul tuo dispositivo. Non affiliato con Anthropic.',
+        aboutFooter: 'Jappy Coder è un client mobile per Codex e Claude Code. È completamente cifrato end-to-end e il tuo account è memorizzato solo sul tuo dispositivo. Non affiliato con Anthropic.',
         whatsNew: 'Novità',
         whatsNewSubtitle: 'Scopri gli ultimi aggiornamenti e miglioramenti',
         reportIssue: 'Segnala un problema',
@@ -222,7 +222,7 @@ export const it: TranslationStructure = {
         voiceServiceUnavailable: 'Il servizio vocale non è temporaneamente disponibile',
         voiceLimitReachedTitle: 'Limite vocale raggiunto',
         voiceHardLimitReached: ({ hours }: { hours: number }) => `Hai utilizzato ${hours}+ ore di voce questo mese. Questo è il massimo consentito. Puoi configurare il tuo agente ElevenLabs nelle impostazioni vocali per utilizzare la tua quota.`,
-        voiceConversationLimitReached: 'Hai raggiunto il numero massimo di conversazioni vocali questo mese. Potremmo aggiungere l\'uso vocale su richiesta in futuro — per favore apri un issue su github.com/nicepkg/happy/issues se raggiungi questo limite.',
+        voiceConversationLimitReached: 'Hai raggiunto il numero massimo di conversazioni vocali questo mese. Potremmo aggiungere l\'uso vocale su richiesta in futuro — per favore apri un issue su github.com/juitem/jappy/issues se raggiungi questo limite.',
         oauthInitializationFailed: 'Impossibile inizializzare il flusso OAuth',
         tokenStorageFailed: 'Impossibile salvare i token di autenticazione',
         oauthStateMismatch: 'Convalida di sicurezza non riuscita. Riprova',
@@ -285,7 +285,7 @@ export const it: TranslationStructure = {
         // Used by Server Configuration screen (app/(app)/server.tsx)
         serverConfiguration: 'Configurazione server',
         enterServerUrl: 'Inserisci un URL del server',
-        notValidHappyServer: 'Non è un Happy Server valido',
+        notValidHappyServer: 'Non è un Jappy Server valido',
         changeServer: 'Cambia server',
         continueWithServer: 'Continuare con questo server?',
         resetToDefault: 'Ripristina predefinito',
@@ -305,9 +305,9 @@ export const it: TranslationStructure = {
         killSessionConfirm: 'Sei sicuro di voler terminare questa sessione?',
         archiveSession: 'Archivia sessione',
         archiveSessionConfirm: 'Sei sicuro di voler archiviare questa sessione?',
-        happySessionIdCopied: 'ID sessione Happy copiato negli appunti',
-        failedToCopySessionId: 'Impossibile copiare l\'ID sessione Happy',
-        happySessionId: 'ID sessione Happy',
+        happySessionIdCopied: 'ID sessione Jappy copiato negli appunti',
+        failedToCopySessionId: 'Impossibile copiare l\'ID sessione Jappy',
+        happySessionId: 'ID sessione Jappy',
         claudeCodeSessionId: 'ID sessione Claude Code',
         claudeCodeSessionIdCopied: 'ID sessione Claude Code copiato negli appunti',
         codexThreadId: 'ID thread Codex',
@@ -341,7 +341,7 @@ export const it: TranslationStructure = {
         path: 'Percorso',
         operatingSystem: 'Sistema operativo',
         processId: 'ID processo',
-        happyHome: 'Happy Home',
+        happyHome: 'Jappy Home',
         copyMetadata: 'Copia metadati',
         agentState: 'Stato agente',
         controlledByUser: 'Controllato dall\'utente',
@@ -451,7 +451,7 @@ export const it: TranslationStructure = {
     },
 
     sidebar: {
-        sessionsTitle: 'Happy',
+        sessionsTitle: 'Jappy',
         showArchived: 'Mostra archiviate',
         hideArchived: 'Nascondi archiviate',
     },
@@ -661,7 +661,7 @@ export const it: TranslationStructure = {
         invalidConnectionLink: 'Link di connessione non valido',
         invalidConnectionLinkDescription: 'Il link di connessione è mancante o non valido. Controlla l\'URL e riprova.',
         connectTerminal: 'Connetti terminale',
-        terminalRequestDescription: 'Un terminale richiede di connettersi al tuo account Happy Coder. Questo consentirà al terminale di inviare e ricevere messaggi in modo sicuro.',
+        terminalRequestDescription: 'Un terminale richiede di connettersi al tuo account Jappy Coder. Questo consentirà al terminale di inviare e ricevere messaggi in modo sicuro.',
         connectionDetails: 'Dettagli connessione',
         publicKey: 'Chiave pubblica',
         encryption: 'Cifratura',
