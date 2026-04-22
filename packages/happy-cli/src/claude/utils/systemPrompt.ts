@@ -13,6 +13,5 @@ export const systemPrompt = (() => trimIdent(`
     Generated with [Claude Code](https://claude.ai/code)
     via [Jappy](https://github.com/juitem/jappy)
 
-    Co-Authored-By: Claude <noreply@anthropic.com>
     Co-Authored-By: Jappy Tool <juitem@gmail.com>
 `))();
